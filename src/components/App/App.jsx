@@ -23,7 +23,7 @@ function App() {
         .then(response => {
             console.log('Response is:',response)
 
-                getCart();
+                getCartList();
 
         })
         .catch(err => {
