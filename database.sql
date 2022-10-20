@@ -9,5 +9,8 @@ CREATE TABLE shopping_cart (
     unit varchar(9),
     purchased BOOLEAN DEFAULT FALSE
 );
-INSERT INTO shopping_cart ("item, quantity, purchased")
-VALUES ("Banana", 60, false), ("More Banana", 3, false), ("Juan", 1, false);
+
+INSERT INTO shopping_cart ("item", "quantity", "unit", "purchased")
+VALUES ('bananas', 60, 'lbs', false), ('More Banana', 3, 'lbs', false), ('Juan', 1, 'unknown', false);
+
+SELECT * FROM  shopping_cart;
