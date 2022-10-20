@@ -6,5 +6,4 @@ function CartList({cartList}) {
     );
 }
 
-
 export default CartList;
