@@ -11,6 +11,7 @@ app.use(express.static('build'));
 // Create your API routes in a separate file
 // and plug them in here with `app.use()`
 app.use('/cart', shopList);
+
 /** ---------- START SERVER ---------- **/
 app.listen(PORT,  () => {
     console.log('Listening on port: ', PORT);
