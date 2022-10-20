@@ -1,15 +1,22 @@
 import React from 'react';
-
+import axios from 'axios';
+import {useEffect, useState} from 'react';
 import Header from '../Header/Header.jsx'
 import './App.css';
+import CartList from '../CartList/CartList.jsx';
 
 
 function App() {
-    return (
+const [cartList, setCartList] = useState([]);
+
+return (
         <div className="App">
             <Header />
             <main>
-                <p>Under Construction...</p>
+                <CartList 
+                cartList = {cartList}
+                />
+                
             </main>
         </div>
     );
