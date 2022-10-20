@@ -1,10 +1,10 @@
 const express = require('express');
-const router= express.Router();
+const routes= express.Router();
 const pool = require('../modules/pool');
 
 //GET students (Chris work)
 
-router.get('/', (req,res) => {
+routes.get('/', (req,res) => {
     const sqlText = `SELECT * FROM shopping_cart`;
     pool.query(sqlText)
     .then((result) => {
