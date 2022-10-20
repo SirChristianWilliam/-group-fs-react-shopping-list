@@ -59,6 +59,34 @@ console.log(cartList);
         });
     };
 
+    const buyItem = (cartitem) => {
+      console.log('in Buy item');
+      axios({
+        method: 'PUT',
+        url: `/cart/${cartitem.id}`
+      })
+      .then(response => {
+        getCartList();
+      })
+      .catch((error) => {
+        console.log('buy item error');
+      })
+    }
+
+    const removeItem = (cartitem) => {
+      console.log('in remove item');
+      axios({
+        method: 'DELETE',
+        url: `/cart/${cartitem.id}`
+      })
+      .then(response => {
+        getCartList();
+      })
+      .catch((error) => {
+        console.log('remove item error');
+      })
+    }
+
     return (
 
         <div className="App">
@@ -71,7 +99,9 @@ console.log(cartList);
             
             <main>
                 <CartList 
-                cartList = {cartList}
+                cartList={cartList}
+                buyItem={buyItem}
+                removeItem={removeItem}
                 />
                 
             </main>
