@@ -8,10 +8,10 @@ routes.get('/', (req,res) => {
     const sqlText = `SELECT * FROM shopping_cart`;
     pool.query(sqlText)
     .then((result) => {
-        res.send(result.row);
+        res.send(result.rows);
     })
     .catch((err) => {
-        console.log("Error making database query ${sqlText}",err)
+        console.log('Error in get cart', err);
         res.sendStatus(500);
     });
 });

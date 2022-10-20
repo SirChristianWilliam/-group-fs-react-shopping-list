@@ -11,7 +11,9 @@ const [cartList, setCartList] = useState([]);
 
 useEffect( () => {
     getCartList();
-  }, [])
+}, [])
+
+console.log(cartList);
 
   const getCartList = () => {
     // make an AJAX request using axios
