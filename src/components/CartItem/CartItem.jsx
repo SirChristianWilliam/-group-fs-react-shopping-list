@@ -1,7 +1,13 @@
-function CartItem(){
-    return(
-        <h2>CartItem</h2>
-    )
+function CartItem({cartitem}) {
+    return (
+        <>
+        <li>
+            {cartitem.item} {cartitem.quantity} {cartitem.unit}
+        </li>
+        </>
+    );
+    
 }
 
-export default CartItem
+export default CartItem;
+

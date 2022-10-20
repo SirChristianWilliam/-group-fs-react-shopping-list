@@ -1,7 +1,18 @@
-function CartList(){
-    return(
-        <h2>CartList</h2>
-    )
+function CartList({cartList}) {
+    return (
+        <>
+        <ul>
+            {cartList.map(cartitem => (
+        <li key={cartitem.id}>
+        {cartitem.item} {cartitem.quantity} {cartitem.unit}
+        </li>
+                
+
+            ))}
+        </ul>
+        </>
+    );
 }
 
-export default CartList
+export default CartList;
+
