@@ -1,4 +1,4 @@
-function ClearReset({ ClearItems ,ResetPurchase }) {
+function ClearReset({ ClearItems, ResetPurchase }) {
     console.log('in ClearReset component');
 
     const handleClear = (evt) => {
