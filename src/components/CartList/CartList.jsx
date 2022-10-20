@@ -1,16 +1,19 @@
+import CartItem from "../CartItem/CartItem";
+
 function CartList({cartList}) {
     return (
-        <>
+        
         <ul>
             {cartList.map(cartitem => (
-        <li key={cartitem.id}>
-        {cartitem.item} {cartitem.quantity} {cartitem.unit}
-        </li>
-                
+        
+        <CartItem 
+        key={cartitem.id}
+        cartitem={cartitem}
+        />
 
             ))}
         </ul>
-        </>
+       
     );
 }
 
