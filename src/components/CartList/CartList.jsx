@@ -1,16 +1,21 @@
-function CartList({cartList}) {
+import CartItem from "../CartItem/CartItem";
+
+function CartList({cartList, buyItem, removeItem}) {
     return (
-        <>
+        
         <ul>
             {cartList.map(cartitem => (
-        <li key={cartitem.id}>
-        {cartitem.item} {cartitem.quantity} {cartitem.unit}
-        </li>
-                
+        
+        <CartItem 
+        key={cartitem.id}
+        cartitem={cartitem}
+        buyItem={buyItem}
+        removeItem={removeItem}
+        />
 
             ))}
         </ul>
-        </>
+       
     );
 }
 
