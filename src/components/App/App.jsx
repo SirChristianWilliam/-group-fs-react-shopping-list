@@ -3,6 +3,7 @@ import axios from 'axios';
 import {useEffect, useState} from 'react';
 import Header from '../Header/Header.jsx'
 import './App.css';
+import ClearReset from '../ClearReset/ClearReset.jsx';
 import CartList from '../CartList/CartList.jsx';
 
 
@@ -31,9 +32,43 @@ console.log(cartList);
       });
   }
 
-return (
+    const ClearItems = () => {
+        console.log('in clear items');
+        axios({
+            method: 'DELETE',
+            url: `/cart/${item}`
+        })
+        .then((response) = {
+            // getCart();
+        })
+        .catch((err) => {
+            alert('Error in ClearItems');
+            console.log(err);
+        });
+    };
+
+    const ResetPurchase = () => {
+        console.log('in reset purchase');
+        axios.put('/reset')
+        .then((response) = {
+            // getCart();
+        })
+        .catch((err) => {
+            alert('Error in ResetPurchase');
+            console.log(err);
+        });
+    };
+
+    return (
+
         <div className="App">
             <Header />
+
+            <ClearReset
+                ClearItems={ClearItems}
+                ResetPurchase={ResetPurchase}
+            />
+            
             <main>
                 <CartList 
                 cartList = {cartList}
