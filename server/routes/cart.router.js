@@ -17,4 +17,35 @@ router.get('/', (req,res) => {
     });
 });
 
+router.put('/reset', (req, res) => {
+    const queryText = `
+        UPDATE "shopping_cart" 
+        SET "purchased" = false;
+    `;
+
+    pool.query(queryText)
+    .then((results) => {
+        res.sendStatus(201);
+    })
+    .catch((err) => {
+        console.log('Error in router.put');
+        res.sendStatus(500);
+    });
+});
+
+router.delete('/clear', (req, res) => {
+    const sqlQuery = `
+        DELETE FROM "shopping_cart"
+    `;
+
+    pool.query(sqlQuery)
+    .then((response) => {
+        res.sendStatus(201);
+    })
+    .catch((err) => {
+        console.log('Error in router /clear', err);
+        res.sendStatus(500);
+    });
+});
+
 module.exports = router;
