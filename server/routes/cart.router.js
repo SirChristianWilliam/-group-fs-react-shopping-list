@@ -1,5 +1,9 @@
 
 const express = require('express');
+
+const { Pool } = require('pg');
+
+
 const router= express.Router();
 const pool = require('../modules/pool');
 
@@ -14,6 +18,23 @@ router.get('/', (req,res) => {
     .catch((err) => {
         console.log(`Error making database query ${sqlText}`,err)
         res.sendStatus(500);
+    });
+});
+
+
+router.post('/', (req,res) =>{
+    const newCart = [req.body.item,req.body.quantity,req.body.unit]
+
+    const sqlText = ` INSERT INTO shopping_cart
+                    ("item","quantity","unit")
+                    VALUES ($1,$2,$3);`
+pool.query(sqlText,newCart)
+    .then((result) =>{
+        res.sendStatus(201)
+    })
+    .catch((error) =>{
+        console.log('Error in POST',error)
+        res.sendStatus(500)
     });
 });
 
@@ -76,5 +97,6 @@ router.delete(`/:id`, (req, res) => {
         console.log('error in DELETE bying item', error);
     })
 })
+
 
 module.exports = router;

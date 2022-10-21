@@ -1,5 +1,40 @@
 import React from 'react';
 import axios from 'axios';
+
+import CartForm from '../CartForm/CartForm.jsx';
+import CartItem from '../CartItem/CartItem.jsx';
+import {useEffect, useState} from 'react';
+import Header from '../Header/Header.jsx'
+import './App.css';
+import CartList from '../CartList/CartList.jsx';
+import ClearReset from '../ClearReset/ClearReset.jsx';
+
+
+function App() {
+
+function addCart(newCartItems){
+        console.log('In addCart')
+
+        axios({
+            method: 'POST',
+            url: '/cart',
+            data: newCartItems
+         })
+        .then(response => {
+            console.log('Response is:',response)
+
+                getCartList();
+
+        })
+        .catch(err => {
+          alert('Error Adding Cart');
+          console.log(err);
+        })
+    }
+
+
+
+
 import {useEffect, useState} from 'react';
 import Header from '../Header/Header.jsx'
 import './App.css';
@@ -8,6 +43,7 @@ import CartList from '../CartList/CartList.jsx';
 
 
 function App() {
+
 const [cartList, setCartList] = useState([]);
 
 useEffect( () => {
@@ -36,6 +72,7 @@ console.log(cartList);
         console.log('in clear items');
         axios({
             method: 'DELETE',
+
             url: `/cart/clear`
         })
         .then((response) => {
@@ -55,13 +92,13 @@ console.log(cartList);
         })
         .then((response) => {
             getCartList();
+
         })
         .catch((err) => {
             alert('Error in ResetPurchase');
             console.log(err);
         });
     };
-
     const buyItem = (cartitem) => {
       console.log('in Buy item');
       axios({
@@ -100,6 +137,7 @@ console.log(cartList);
                 ResetPurchase={ResetPurchase}
             />
             
+
             <main>
                 <CartList 
                 cartList={cartList}

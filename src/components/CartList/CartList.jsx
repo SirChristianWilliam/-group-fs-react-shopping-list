@@ -1,5 +1,3 @@
-
-
 import CartItem from "../CartItem/CartItem";
 
 function CartList({cartList, buyItem, removeItem}) {
@@ -26,4 +24,5 @@ function CartList({cartList, buyItem, removeItem}) {
 }
 
 export default CartList;
+
 

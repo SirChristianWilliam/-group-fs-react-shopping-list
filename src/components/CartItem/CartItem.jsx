@@ -20,4 +20,4 @@ function CartItem({cartitem, buyItem, removeItem}) {
     }
     
     export default CartItem;
-    
+  
