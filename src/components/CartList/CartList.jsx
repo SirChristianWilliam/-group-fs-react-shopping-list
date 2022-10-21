@@ -1,17 +1,29 @@
-function CartList({cartList}) {
-    return (
-        <>
-        <ul>
-            {cartList.map(cartitem => (
-        <li key={cartitem.id}>
-        {cartitem.item} {cartitem.quantity} {cartitem.unit}
-        </li>
-                
 
+
+import CartItem from "../CartItem/CartItem";
+
+function CartList({cartList, buyItem, removeItem}) {
+    return (
+        
+        <table id="myTable">
+            <thead>
+            <tr>
+                <th>Item</th><th>Quantity</th><th>Unit</th><th>Purchased</th><th>Buy</th><th>Remove</th>
+            </tr>
+            </thead>
+        <tbody>
+            {cartList.map(cartitem => (
+        <CartItem 
+        key={cartitem.id}
+        cartitem={cartitem}
+        buyItem={buyItem}
+        removeItem={removeItem}
+        />
             ))}
-        </ul>
-        </>
+       </tbody>
+       </table>       
     );
 }
 
 export default CartList;
+

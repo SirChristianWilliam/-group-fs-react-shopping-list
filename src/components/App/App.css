@@ -2,3 +2,44 @@ main {
   width: 90%;
   margin: auto;
 }
+.banner-header {
+  background-color: rgba(255,255,255,.5)
+}
+
+th {
+  padding:10px;
+  background-color: rgb(142, 139, 139);
+  font-size: 30px;
+  
+}
+td {
+  padding:10px;
+}
+tr:nth-child(even) {
+  background-color: lightgrey;
+}
+ #myTable, th, td {
+  border:1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+  margin:auto;
+ }
+ .buyBtn, .removeBtn {
+  border:1px solid black;
+  border-radius:5px;
+  padding:5px 10px;
+ }
+button {
+  cursor:pointer;
+}
+/* ul,li {
+  display:table;
+  border:1px solid black;
+  border-collapse: collapse;
+margin: 20px;
+
+} */
+
+/* button {
+  margin-left:10px;
+} */
