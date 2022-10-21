@@ -10,4 +10,3 @@ function CartItem({cartitem}) {
 }
 
 export default CartItem;
-

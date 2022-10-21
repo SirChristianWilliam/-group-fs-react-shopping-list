@@ -1,6 +1,7 @@
 function CartList({cartList}) {
     return (
         <>
+        
         <ul>
             {cartList.map(cartitem => (
         <li key={cartitem.id}>
@@ -15,4 +16,3 @@ function CartList({cartList}) {
 }
 
 export default CartList;
-

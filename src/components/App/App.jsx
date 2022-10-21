@@ -4,13 +4,13 @@ import CartForm from '../CartForm/CartForm.jsx';
 import CartItem from '../CartItem/CartItem.jsx';
 import {useEffect, useState} from 'react';
 import Header from '../Header/Header.jsx'
-
 import './App.css';
-import ClearReset from '../ClearReset/ClearReset.jsx';
 import CartList from '../CartList/CartList.jsx';
+import ClearReset from '../ClearReset/ClearReset.jsx';
 
 
 function App() {
+
 function addCart(newCartItems){
         console.log('In addCart')
 
@@ -30,6 +30,8 @@ function addCart(newCartItems){
           console.log(err);
         })
     }
+
+
 
 const [cartList, setCartList] = useState([]);
 
@@ -82,25 +84,23 @@ console.log(cartList);
         });
     };
 
-
     return (
+
 
         <div className="App">
             <Header />
-
+            <CartForm 
+            addCart={addCart} />
+            <CartList 
+                cartList = {cartList} />
             <ClearReset
                 ClearItems={ClearItems}
                 ResetPurchase={ResetPurchase}
             />
             
+            
             <main>
-                <CartList 
-                cartList = {cartList}
-                />
-                
             </main>
-            <CartForm 
-            addCart={addCart}/>
         </div>
     );
 }
