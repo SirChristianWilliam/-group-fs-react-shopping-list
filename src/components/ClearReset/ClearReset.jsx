@@ -15,8 +15,10 @@ function ClearReset({ ClearItems, ResetPurchase }) {
     return (
         <>
             <h3>ClearReset</h3>
-            <p>Add ResetButton here</p>
-            <p>Add ClearButton here</p>
+            <div>
+                <button className="clearBtn" onClick={handleClear}>Clear</button>
+                <button className="resetBtn" onClick={handleReset}>Reset</button>
+            </div>
         </>
     );
 }
