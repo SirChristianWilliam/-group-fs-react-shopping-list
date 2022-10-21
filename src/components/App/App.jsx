@@ -36,10 +36,10 @@ console.log(cartList);
         console.log('in clear items');
         axios({
             method: 'DELETE',
-            url: `/cart/${item}`
+            url: `/cart/clear`
         })
-        .then((response) = {
-            // getCart();
+        .then((response) => {
+            getCartList();
         })
         .catch((err) => {
             alert('Error in ClearItems');
@@ -49,9 +49,12 @@ console.log(cartList);
 
     const ResetPurchase = () => {
         console.log('in reset purchase');
-        axios.put('/reset')
-        .then((response) = {
-            // getCart();
+        axios({
+            method: 'PUT',
+            url: '/cart/reset'
+        })
+        .then((response) => {
+            getCartList();
         })
         .catch((err) => {
             alert('Error in ResetPurchase');
