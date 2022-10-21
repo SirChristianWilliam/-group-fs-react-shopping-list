@@ -116,7 +116,9 @@ console.log(cartList);
 
         <div className="App">
             <Header />
-            <CartForm />
+            <CartForm 
+            addCart={addCart}
+            />
             <ClearReset
                 ClearItems={ClearItems}
                 ResetPurchase={ResetPurchase}
